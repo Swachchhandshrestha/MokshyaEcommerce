@@ -41,14 +41,14 @@ class _ProductsState extends State<Products> {
     {
       "name": "Attendence Device",
       "picture": "images/products/attendence_device.jpg",
-      "description": "This is Network Keyboard",
+      "description": "This is Attendance Device",
       "price": 5000,
       "quantity": 10
     },
     {
       "name": "Switch",
       "picture": "images/products/switch.jpg",
-      "description": "This is Network Keyboard",
+      "description": "This is switch",
       "price": 5000,
       "quantity": 10
     },
@@ -104,6 +104,7 @@ class Single_product extends StatelessWidget {
                         product_details_picture: product_picture,
                         product_details_price: product_price,
                         product_details_quantity: product_quantity,
+                        product_details_description: product_description,
                       ),
               ),
             ),
