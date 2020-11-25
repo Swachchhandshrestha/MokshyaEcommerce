@@ -4,6 +4,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 //self imports
 import 'package:mokshya/components/horizontal_listview.dart';
 import 'package:mokshya/components/products.dart';
+import 'package:mokshya/pages/cart.dart';
 
 void main()
 {
@@ -46,7 +47,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.1,
-        title: Text('Welcome to Mokshya Store'),
+        title: Center(child: Text('Mokshya Tech'),),
         actions: [
           new IconButton(icon: Icon(Icons.search),
             onPressed:(){
@@ -54,7 +55,9 @@ class _HomepageState extends State<Homepage> {
           },),
           new IconButton(icon: Icon(Icons.shopping_cart),
           onPressed: (){
-
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>Cart(),
+          ),
+          );
           },),
         ],
 
@@ -102,10 +105,14 @@ class _HomepageState extends State<Homepage> {
             ),
             InkWell(
               onTap: ()
-              {},
+              {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Cart(),
+                ),
+                );
+              },
               child: ListTile(
-                title: Text('Categories'),
-                leading: Icon(Icons.dashboard,color: Colors.deepPurple),
+                title: Text('Shopping Cart'),
+                leading: Icon(Icons.shopping_cart,color: Colors.deepPurple),
 
               ),
             ),
