@@ -13,44 +13,50 @@ class _ProductsState extends State<Products> {
     {
       "name": "Surviliance camera",
       "picture": "images/products/camera.jpg",
-      "description": "This is Survillance Camera",
+      "description": "This is Survillance Camera.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       "price": 5000,
-      "quantity": 10
+      "quantity": 10,
+      "manufacturer":"HKVISION"
     },
     {
       "name": "Cake",
       "picture": "images/products/cake.png",
-      "description": "This is Network Keyboard",
+      "description": "This is Cake.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       "price": 1800,
-      "quantity": 10
+      "quantity": 10,
+      "manufacturer":"Happy Cakes"
     },
     {
       "name": "Hard Disk",
       "picture": "images/products/Harddisk.jpg",
-      "description": "This is Hard Disk",
+      "description": "This is Hard Disk.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       "price": 5000,
-      "quantity": 10
+      "quantity": 10,
+      "manufacturer":"WD PURPLE"
     },
     {
       "name": "Network Keyboard",
       "picture": "images/products/network_keyboard.jpg",
-      "description": "This is Network Keyboard",
+      "description": "This is Network Keyboard.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       "price": 5000,
-      "quantity": 10
+      "quantity": 10,
+      "manufacturer":"HKVISION"
     },
     {
       "name": "Attendence Device",
       "picture": "images/products/attendence_device.jpg",
-      "description": "This is Attendance Device",
+      "description": "This is Attendance Device.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       "price": 5000,
-      "quantity": 10
+      "quantity": 10,
+      "manufacturer":"ZKTECO"
     },
     {
       "name": "Switch",
       "picture": "images/products/switch.jpg",
-      "description": "This is switch",
+      "description": "This is switch.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       "price": 5000,
-      "quantity": 10
+      "quantity": 10,
+      "manufacturer":"HKVISION"
     },
   ];
 
@@ -68,6 +74,7 @@ class _ProductsState extends State<Products> {
           product_description: products_list[index]['description'],
           product_price: products_list[index]['price'],
           product_quantity: products_list[index]['quantity'],
+          product_manufacturer: products_list[index]['manufacturer'],
         );
       },
     );
@@ -80,13 +87,16 @@ class Single_product extends StatelessWidget {
   final product_description;
   final product_price;
   final product_quantity;
+  final product_manufacturer;
 
   Single_product(
       {this.product_name,
       this.product_description,
       this.product_picture,
       this.product_price,
-      this.product_quantity});
+      this.product_quantity,
+      this.product_manufacturer
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -105,6 +115,7 @@ class Single_product extends StatelessWidget {
                         product_details_price: product_price,
                         product_details_quantity: product_quantity,
                         product_details_description: product_description,
+                        product_details_manufacturer:product_manufacturer
                       ),
               ),
             ),
